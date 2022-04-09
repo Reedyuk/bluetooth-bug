@@ -18,10 +18,11 @@ class ProgrammingViewModel: ObservableObject {
     @Published var isScanning = false
     
     init() {
-    
         bluetoothService = BluetoothService(blueFalcon: Blue_falconBlueFalcon(context: UIView(), serviceUUID: nil))
         bluetoothService.bluetoothManager.registerForCallback(callback: self)
-        
+    }
+    
+    func scan() {
         bluetoothService.bluetoothManager.startScanning()
       //  CBCentralManager(delegate: nil, queue: nil)
         isScanning = bluetoothService.bluetoothManager.isScanning()

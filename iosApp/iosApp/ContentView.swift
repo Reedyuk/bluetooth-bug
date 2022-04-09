@@ -11,6 +11,11 @@ struct ContentView: View {
     
 	var body: some View {
         Text("IsScanning: \(viewModel.isScanning ? "YES" : "NO")")
+        Button(action: {
+            viewModel.scan()
+        }) {
+            Text("Start Scan")
+        }
 	}
 }
 
